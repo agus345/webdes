@@ -1,0 +1,14 @@
+RewriteEngine on
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.*)index\.php($|\ |\?)
+RewriteRule ^ /%1 [R=301,L]
+
+RewriteRule ^home indexisi.php [L]
+RewriteRule ^profil-desa indexprofil.php [L]
+RewriteRule ^sekilas-berita indexberita.php [L]
+RewriteRule ^struktur-desa indexstruktur.php [L]
+RewriteRule ^galeri indexgalery.php [L]
+
+
+Options All -Indexes
+
