@@ -1,5 +1,5 @@
 <?php
-require_once "masteradmin/control/config.php";
+
 
   $banner1 = mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM banner"),MYSQLI_ASSOC);
   
@@ -11,8 +11,6 @@ require_once "masteradmin/control/config.php";
 
 
 ?>       
-
-<?php echo $data['foto']; ?>
  <div class="slider">
             <div class="container">            
                 <div id="about-slider">

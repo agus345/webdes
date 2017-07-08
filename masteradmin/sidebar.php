@@ -12,16 +12,23 @@
                             <a href="?mod=banner"><i class="fa fa-edit fa-fw"></i> Banner</a>
                         </li>
                         <li>
-                            <a href="?mod=gallery"><i class="fa fa-film fa-fw"></i> Gallery</a>
+                            <a href="?mod=artikel"><i class="fa fa-edit fa-fw"></i> Artikel</a>
                         </li>
+                        <li>
+                            <a href="?mod=gallery"><i class="fa  fa-film"></i> Gallery</a>
+                        </li>
+                        <li>
+                            <a href="?mod=perdes"><i class="fa  fa-book"></i> Perdes</a>
+                        </li>
+                        <li>
+                            <a href="?mod=strukdes"><i class="fa  fa-sitemap fa-fw"></i> Struktur Desa</a>
+                        </li>
+
 
                        <!--  <li>
                             <a href="?mod=pengguna"><i class="fa fa-user fa-fw"></i> Pengguna</a>
                         </li>
                         -->
-                         <li>
-                            <a href="?mod=artikel"><i class="fa fa-file-text"></i> Berita</a>
-                        </li>
                     </ul>
                 </div>
 

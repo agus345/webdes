@@ -17,20 +17,20 @@
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="profil-desa">Profil Desa <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                  <li><a href="#">Sejarah Singkat</a></li>
+                                  <li><a href="sejarah-singkat">Sejarah Singkat</a></li>
                                   <li><a href="#">Sejarah KaDes</a></li>
                                   <li><a href="struktur-desa">Struktur Desa</a></li>
                                   <li><a href="#">PerDes</a></li>
-                                  <li><a href="#">Sambutan</a></li>
+                                  <li><a href="sambutan-kades">Sambutan Kades</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="profil-desa">Potensi Desa <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                  <li><a href="#">Khas Desa</a></li>
-                                  <li><a href="#">Sosial & Budaya</a></li>
-                                  <li><a href="#">Ekonomi</a></li>
-                                  <li><a href="#">Wisata Daerah</a></li>
+                                  <li><a href="sekilas-khasdesa.html">Khas Desa</a></li>
+                                  <li><a href="sekilas-sosial-budaya.html">Sosial & Budaya</a></li>
+                                  <li><a href="sekilas-ekonomi.html">Ekonomi</a></li>
+                                  <li><a href="sekilas-wisata.html">Wisata Daerah</a></li>
                                 </ul>
                             </li>
                             <li><a href="galeri">Gallery</a></li>

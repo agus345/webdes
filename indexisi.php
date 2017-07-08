@@ -1,4 +1,5 @@
-<?php require_once 'awal.php';?>
+<?php 
+require_once 'awal.php';?>
 
 
     <body class="homepage">   
@@ -7,11 +8,12 @@ require_once 'header.php';
 require_once 'slider.php';
 
 
+  $profil = mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM profil"),MYSQLI_ASSOC);
+  
+  $artikel = "SELECT * FROM artikel order by id desc";
+  $r_artikel = $conn->query($artikel);
+
 ?>
-
-
-
-
         <section id="blog" class="container">        
             <div align="center">
             <ol class="breadcrumb">
@@ -23,59 +25,32 @@ require_once 'slider.php';
                     <div class="col-md-8">
                         <div class="blog-item">
                             <div class="row">
-                                <div class="col-xs-12 col-sm-4 blog-content">
-                                <div align="center">
-                                    <img class="img-responsive img-blog" src="images/blog/blog1.jpg" width="100%" alt="" />
-                                </div>
-                                    <a href="blog-item.html">Consequat bibendum quam liquam viverra</a>
-                                    <p align="justify">Curabitur quis libero leo, pharetra mattis eros. Praesent consequat libero eget dolor convallis vel rhoncus magna scelerisque.</p>
-                                    <a class="btn btn-primary readmore" href="blog-item.html">Read More <i class="fa fa-angle-right"></i></a>
-                                </div>
 
+                            <?php
+                            $noartikel = 1;
+                            while ($d_artikel= mysqli_fetch_array($r_artikel,MYSQLI_ASSOC)) {
+                            ?>
                                 <div class="col-xs-12 col-sm-4 blog-content">
-                                <div align="center">
-                                    <img class="img-responsive img-blog" src="images/blog/blog1.jpg" width="100%" alt="" />
-                                </div>
-                                    <a href="blog-item.html">Consequat bibendum quam liquam viverra</a>
-                                    <p align="justify">Curabitur quis libero leo, pharetra mattis eros. Praesent consequat libero eget dolor convallis vel rhoncus magna scelerisque.</p>
-                                    <a class="btn btn-primary readmore" href="blog-item.html">Read More <i class="fa fa-angle-right"></i></a>
-                                </div>
-
-                                <div class="col-xs-12 col-sm-4 blog-content">
-                                <div align="center">
-                                    <img class="img-responsive img-blog" src="images/blog/blog1.jpg" width="100%" alt="" />
-                                </div>
-                                    <a href="blog-item.html">Consequat bibendum quam liquam viverra</a>
-                                    <p align="justify">Curabitur quis libero leo, pharetra mattis eros. Praesent consequat libero eget dolor convallis vel rhoncus magna scelerisque .</p>
-                                    <a class="btn btn-primary readmore" href="blog-item.html">Read More <i class="fa fa-angle-right"></i></a>
-                                </div>
-
-                                <div class="col-xs-12 col-sm-4 blog-content">
-                                    <div align="center">
-                                        <img class="img-responsive img-blog" src="images/blog/blog1.jpg" width="100%" alt="" />
-                                    </div>
-                                        <a href="blog-item.html">Consequat bibendum quam liquam viverra</a>
-                                        <p align="justify">Curabitur quis libero leo, pharetra mattis eros. Praesent consequat libero eget dolor convallis vel rhoncus magna scelerisque.</p>
-                                        <a class="btn btn-primary readmore" href="blog-item.html">Read More <i class="fa fa-angle-right"></i></a>
-                                </div>
-
-                                <div class="col-xs-12 col-sm-4 blog-content">
-                                    <div align="center">
-                                        <img class="img-responsive img-blog" src="images/blog/blog1.jpg" width="100%" alt="" />
-                                    </div>
-                                        <a href="blog-item.html">Consequat bibendum quam liquam viverra</a>
-                                        <p align="justify">Curabitur quis libero leo, pharetra mattis eros. Praesent consequat libero eget dolor convallis vel rhoncus magna scelerisque.</p>
-                                        <a class="btn btn-primary readmore" href="blog-item.html">Read More <i class="fa fa-angle-right"></i></a>
-                                </div>
-
-                                <div class="col-xs-12 col-sm-4 blog-content">
-                                    <div align="center">
-                                        <img class="img-responsive img-blog" src="images/blog/blog1.jpg" width="100%" alt="" />
-                                    </div>
-                                        <a href="blog-item.html">Consequat bibendum quam liquam viverra</a>
-                                        <p align="justify">Curabitur quis libero leo, pharetra mattis eros. Praesent consequat libero eget dolor convallis vel rhoncus magna scelerisque.</p>
-                                        <a class="btn btn-primary readmore" href="blog-item.html">Read More <i class="fa fa-angle-right"></i></a>
-                                </div>
+                                        <div align="center">
+                                        <?php
+                                            if ($d_artikel['foto'] == "") {
+                                                ?>
+                                            <img class="img-responsive img-blog" src="images/no-image.png" width="100%" alt="<`" />
+                                            <?php
+                                            }else{?>
+                                            <img class="img-responsive img-blog" src="images/artikel/<?php echo $d_artikel['foto'];?>" width="100%" alt="<?php echo $d_artikel['judul'];?>" />
+                                            <?php
+                                            }
+                                        ?>
+                                        </div>
+                                        <a href="blog-item.html"><?php echo $d_artikel['judul'];?></a>
+                                        <p align="justify"><?php echo $d_artikel['deskripsi_singkat'];?></p>
+                                        <a class="btn btn-primary readmore" href="artikel.html?no_urut=<?php echo $d_artikel['id'];?>">Baca Selengkapnya <i class="fa fa-angle-right"></i></a>
+                                </div>                           
+                                <?php
+                                $noartikel++;
+                                }
+                            ?>
                             </div>    
                         </div><!--/.blog-item-->
                     </div><!--/.col-md-8-->
@@ -88,10 +63,11 @@ require_once 'slider.php';
                                 <div class="col-sm-12">
                                     <div align="center">
                                         <!-- <img src="images/blog/avatar3.png" alt=""  /> -->
-                                        <img src="images/man1.jpg" width="200">
+                                        <img src="images/profil/<?php echo $profil['foto'];?>" width="200">
                                         <br/> <p></p>
-                                        <p>Nama <a href="#">Bapak xxx</a><br/>Sebagai <a href="#">Kepala Desa</a><br/>Periode 2014 - 2015 </p>
+                                        <p>Nama <a href="#"><?php echo $profil['nama'];?></a><br/>Sebagai <a href="#"><?php echo $profil['jabatan'];?></a><br/>Periode <?php echo $profil['periode'];?> </p>
                                     </div>                                
+                                    <!--                                     
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="social">
@@ -104,13 +80,21 @@ require_once 'slider.php';
                                                 </ul>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> 
+                                    -->
                                 </div>
                             </div>                     
-                        </div><!--/.recent comments-->
-
-
-                </div><!--/.blog_gallery-->
+                        </div><!--/.recent comments-->  
+                        <div class="widget categories">
+                            <h3><b>Sambutan Kepala Desa</b></h3>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div align="center">                                        
+                                        <p align="justify"><?php echo $profil['sambutan'];?> </p>
+                                    </div>                                                                   
+                                </div>
+                            </div>                     
+                        </div><!--/.recent comments-->                        
                 </aside>  
             </div><!--/.row-->
         </div>
@@ -149,7 +133,7 @@ require_once 'slider.php';
                     </div>
                 </div>
 
-                <div class="row">       
+               <!--  <div class="row">       
                     <div class="col-sm-3">
                         <div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
                             <div class="joomla-skill">                                   
@@ -187,7 +171,7 @@ require_once 'slider.php';
                     </div>                  
                 </div>  
             </div>
-
+ -->
 
         </div><!--/.container-->
     </section><!--/about-us-->

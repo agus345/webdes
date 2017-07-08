@@ -5,10 +5,10 @@
 <?php 
 require_once 'header.php';
 //require_once 'slider.php';
-
+  $berita = "SELECT * FROM artikel where kategori_artikel_id = '5' order by id desc";
+  $r_berita = $conn->query($berita);
 
 ?>
-
         <section id="blog" class="container">        
             <div align="center">
             <ol class="breadcrumb">
@@ -20,24 +20,34 @@ require_once 'header.php';
                     <div class="col-md-12">
                         <div class="blog-item">
                             <div class="row">
+                            <?php
+                            $noartikel = 1;
+                            while ($d_berita= mysqli_fetch_array($r_berita,MYSQLI_ASSOC)) {
+                            ?>
                                 <div class="col-md-4">
-                                    <a href="#"><img class="img-responsive img-blog" src="images/blog/blog1.jpg" width="100%" alt="" /></a>
-                                    <h2><a href="blog-item.html">Consequat bibendum quam liquam viverra</a></h2>
-                                    <h3>Curabitur quis libero leo, pharetra mattis eros. Praesent consequat libero eget dolor convallis vel rhoncus magna scelerisque. Donec nisl ante, elementum eget posuere a, consectetur a metus. Proin a adipiscing sapien. Suspendisse vehicula porta lectus vel semper. Nullam sapien elit, lacinia eu tristique non.posuere at mi. Morbi at turpis id urna ullamcorper ullamcorper.</h3>
-                                    <a class="btn btn-primary readmore" href="blog-item.html">Read More <i class="fa fa-angle-right"></i></a>
+                                    <a href="">
+                                     <?php
+                                            if ($d_berita['foto'] == "") {
+                                                ?>
+                                            <img class="img-responsive img-blog" src="images/no-image.png" width="100%" alt="<?php echo $d_berita['judul'];?>" />
+                                            <?php
+                                            }else{?>
+
+                                            <img class="img-responsive img-blog" src="images/artikel/<?php echo $d_berita['foto'];?>" width="100%" alt="<?php echo $berita['judul'];?>" />
+                                            <?php
+                                            }
+                                        ?>
+                                    </a>
+                                    
+                                    <h2><a href=""><?php  echo $d_berita['deskripsi_singkat'];?></a></h2>
+                                    <h3><?php  echo $d_berita['isi'];?></h3>
+                                    <a class="btn btn-primary readmore" href="artikel.html?no_urut=<?php echo $d_berita['id'];?>">Baca Selengkapnya <i class="fa fa-angle-right"></i></a>                                    
+                                    <input type="button" value="Kembali" onClick="history.go(-1)" class="btn btn-danger readmore">
                                 </div>
-                                <div class="col-md-4">
-                                    <a href="#"><img class="img-responsive img-blog" src="images/blog/blog1.jpg" width="100%" alt="" /></a>
-                                    <h2><a href="blog-item.html">Consequat bibendum quam liquam viverra</a></h2>
-                                    <h3>Curabitur quis libero leo, pharetra mattis eros. Praesent consequat libero eget dolor convallis vel rhoncus magna scelerisque. Donec nisl ante, elementum eget posuere a, consectetur a metus. Proin a adipiscing sapien. Suspendisse vehicula porta lectus vel semper. Nullam sapien elit, lacinia eu tristique non.posuere at mi. Morbi at turpis id urna ullamcorper ullamcorper.</h3>
-                                    <a class="btn btn-primary readmore" href="blog-item.html">Read More <i class="fa fa-angle-right"></i></a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a href="#"><img class="img-responsive img-blog" src="images/blog/blog1.jpg" width="100%" alt="" /></a>
-                                    <h2><a href="blog-item.html">Consequat bibendum quam liquam viverra</a></h2>
-                                    <h3>Curabitur quis libero leo, pharetra mattis eros. Praesent consequat libero eget dolor convallis vel rhoncus magna scelerisque. Donec nisl ante, elementum eget posuere a, consectetur a metus. Proin a adipiscing sapien. Suspendisse vehicula porta lectus vel semper. Nullam sapien elit, lacinia eu tristique non.posuere at mi. Morbi at turpis id urna ullamcorper ullamcorper.</h3>
-                                    <a class="btn btn-primary readmore" href="blog-item.html">Read More <i class="fa fa-angle-right"></i></a>
-                                </div>                                                                
+                                <?php
+                                $noartikel++;
+                                }
+                            ?>
                             </div>    
                         </div><!--/.blog-item-->
             </div><!--/.row-->

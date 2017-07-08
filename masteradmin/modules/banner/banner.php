@@ -43,7 +43,7 @@
 
                               <div class="col-xs-3">
                                   <p class="page-header">Judul : <?php echo $data['alt'];?></p>
-                                    <img src="../images/banner/<?php echo $data['foto']; ?>" class="img-rounded" width="250px" height="250px" />
+                                    <img src="../images/banner/<?php echo $data['foto']; ?>" class="img-responsive img-blog"  width="250px" height="250px" />
                                   <p class="page-header">
                                     <span>
                                     <a class="btn btn-info" href="?mod=<?=$modname?>_ubah&id=<?php echo $data['id']?>" title="click for edit" onclick="return confirm('sure to edit ?')"><span class="glyphicon glyphicon-edit"></span> Edit</a> 

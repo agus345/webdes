@@ -23,3 +23,6 @@
         ======================================================= -->  
 
     </head>
+<?php
+require_once "masteradmin/control/config.php";
+?>

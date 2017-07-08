@@ -85,7 +85,7 @@
 
                         ?>
                             <h3>Form Tambah Banner</h3>
-                              <form method="post" method="post" enctype="multipart/form-data" class="form-horizontal">
+                              <form method="post" enctype="multipart/form-data" class="form-horizontal">
                               <?php
                                   if(isset($errMSG)){
                                     ?>

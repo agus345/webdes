@@ -15,7 +15,7 @@ function nonaktifonrow($modname, $id){
 
 function aktifonrow($modname, $id,$pesan){
 //  print '<a href="?mod='.$modname.'&id='.$id.'"><span class="fa fa-trash"></span></a>';
-  print '<a href="?mod='.$modname.'&id='.$id.'" title="click for delete" onclick="'.$pesan.'"><span class="fa fa-trash"></span></a>'; 
+  print '<a href="?mod='.$modname.'&id='.$id.'" onclick="'.$pesan.'"><span class="fa fa-trash"></span></a>'; 
 
 }
 #### BAGIAN AKSI PADA TABEL END ####
@@ -38,7 +38,7 @@ function alert_warning($word){
 #### BAGIAN ALERT STOP ####
 
 #### BAGIAN SELET START####
-function selectdata($a, $label, $name, $query, $valuefield, $captionfield) {
+function selectdata($a, $name, $query, $valuefield, $captionfield) {
     $sql = "select * from $query";
     $hasil = mysqli_query($a,$sql);
     print '<select name="'.$name.'" class="form-control select2" style="width: 100%;">
@@ -49,7 +49,7 @@ function selectdata($a, $label, $name, $query, $valuefield, $captionfield) {
         print '</select>';
 }
 
-function selectdataedit($a,$label, $name, $query, $valuefield, $captionfield, $value, $caption) {
+function selectdataedit($a, $name, $query, $valuefield, $captionfield, $value, $caption) {
     $sql = "select * from $query";
     $hasil = mysqli_query($a, $sql);
           print '<select name="'.$name.'" class="form-control select2" style="width: 100%;">
@@ -60,6 +60,19 @@ function selectdataedit($a,$label, $name, $query, $valuefield, $captionfield, $v
             }
               print '</select>';
 }
+
+function selectdataedit2($a, $name, $query, $valuefield, $captionfield, $value, $caption) {
+    $sql = "select * from $query";
+    $hasil = mysqli_query($a,$sql);
+    print '<select name="'.$name.'" class="form-control select2" style="width: 100%;">
+              <option value="'.$value.'">'.$caption.'</option>';
+          while ($data = mysqli_fetch_array($hasil,MYSQLI_ASSOC)) 
+          {
+            print '<option value="'.$data[$valuefield].'">'.$data[$captionfield].'</option>';
+          }
+        print '</select>';
+}
+
 
 #### BAGIAN SELET END####
 

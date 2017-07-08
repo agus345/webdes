@@ -5,6 +5,7 @@
 <?php 
 require_once 'header.php';
 //require_once 'slider.php';
+ $d_gallery = mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM gallery"),MYSQLI_ASSOC);
 
 
 ?>

@@ -6,6 +6,8 @@
 require_once 'header.php';
 //require_once 'slider.php';
 
+$struktur = "SELECT * FROM struktur_desa order by id desc";
+$r_struktur = $conn->query($struktur);
 
 ?>
 
@@ -17,83 +19,32 @@ require_once 'header.php';
             </div>
 
             <div class="row">
-                <div class="col-xs-12 col-sm-12 wow fadeInDown">
-                    <div class="clients-comments text-center">
-                        <img src="images/client1.png" class="img-circle" alt="">
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</h3>
-                        <h4><span>-John Doe /</span>  Director of corlate.com</h4>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 wow fadeInDown">
-                    <div class="clients-comments text-center">
-                        <img src="images/client1.png" class="img-circle" alt="">
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</h3>
-                        <h4><span>-John Doe /</span>  Director of corlate.com</h4>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 wow fadeInDown">
-                    <div class="clients-comments text-center">
-                        <img src="images/client1.png" class="img-circle" alt="">
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</h3>
-                        <h4><span>-John Doe /</span>  Director of corlate.com</h4>
-                    </div>
-                </div>
+            <?php
+                $nobanner = 1;
+                while ($d_struktur= mysqli_fetch_array($r_struktur,MYSQLI_ASSOC)) {
+            ?>
 
 
-                <div class="col-md-4 wow fadeInDown">
+                <div class="col-xs-12 col-sm-4 wow fadeInDown">
                     <div class="clients-comments text-center">
-                        <img src="images/client1.png" class="img-circle" alt="">
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</h3>
-                        <h4><span>-John Doe /</span>  Director of corlate.com</h4>
-                    </div>
-                </div>
-                <div class="col-md-4 wow fadeInDown">
-                    <div class="clients-comments text-center">
-                        <img src="images/client2.png" class="img-circle" alt="">
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</h3>
-                        <h4><span>-John Doe /</span>  Director of corlate.com</h4>
-                    </div>
-                </div>
-                <div class="col-md-4 wow fadeInDown">
-                    <div class="clients-comments text-center">
-                        <img src="images/client3.png" class="img-circle" alt="">
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</h3>
-                        <h4><span>-John Doe /</span>  Director of corlate.com</h4>
-                    </div>
-                </div>
+                    <?php
+                    if ($d_struktur['foto'] == '') {?>
+                        <img src="images/no-image.png" class="img-circle" alt="Struktur Desa">
+                    <?php }else{?>
 
-                <div class="col-xs-12 col-sm-3 wow fadeInDown">
-                    <div class="clients-comments text-center">
-                        <img src="images/client1.png" class="img-circle" alt="">
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</h3>
-                        <h4><span>-John Doe /</span>  Director of corlate.com</h4>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-3 wow fadeInDown">
-                    <div class="clients-comments text-center">
-                        <img src="images/client1.png" class="img-circle" alt="">
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</h3>
-                        <h4><span>-John Doe /</span>  Director of corlate.com</h4>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-3 wow fadeInDown">
-                    <div class="clients-comments text-center">
-                        <img src="images/client1.png" class="img-circle" alt="">
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</h3>
-                        <h4><span>-John Doe /</span>  Director of corlate.com</h4>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-3 wow fadeInDown">
-                    <div class="clients-comments text-center">
-                        <img src="images/client1.png" class="img-circle" alt="">
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</h3>
-                        <h4><span>-John Doe /</span>  Director of corlate.com</h4>
-                    </div>
-                </div>                                                
+<img src="images/strukturdesa/<?php echo $d_struktur['foto'];?>" class="img-circle" alt="<?php echo $d_struktur['nama'];?>">
+                    <?php }
+                    ?>
+                        
 
-
+                        <h4><span>-<?php echo $d_struktur['nama'];?> /</span>  <?php echo $d_struktur['jabatan'];?></h4>
+                    </div>
+                </div>
+            <?php
+                $nobanner++;
+                }
+            ?>
+                
             </div>
         </div><!--/.container-->
     </section><!--/#feature-->

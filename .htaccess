@@ -6,8 +6,15 @@ RewriteRule ^ /%1 [R=301,L]
 RewriteRule ^home indexisi.php [L]
 RewriteRule ^profil-desa indexprofil.php [L]
 RewriteRule ^sekilas-berita indexberita.php [L]
+RewriteRule ^sekilas-khasdesa.html indexkhas.php [L]
+RewriteRule ^sekilas-sosial-budaya.html indexsosbud.php [L]
+RewriteRule ^sekilas-ekonomi.html indexekonomi.php [L]
+RewriteRule ^sekilas-wisata.html indexwisata.php [L]
+RewriteRule ^artikel.html indexberitadetail.php [L]
 RewriteRule ^struktur-desa indexstruktur.php [L]
 RewriteRule ^galeri indexgalery.php [L]
+RewriteRule ^sejarah-singkat indexsejarahsingkat.php [L]
+RewriteRule ^sambutan-kades indexsambutan.php [L]
 
 
 Options All -Indexes

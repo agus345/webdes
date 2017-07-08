@@ -4,6 +4,10 @@
     <script src="vendor/metisMenu/metisMenu.min.js"></script>
     <script src="dist/js/sb-admin-2.js"></script>
 
+    <!-- SELECT 2 -->
+    <script src="vendor/select2/select2.full.min.js"></script>
+
+
 
 <!-- TAMBAHAN EXPORT JAVASCRIPT -->
 
@@ -28,6 +32,7 @@
 
 <script>
 $(function () {
+
     $('.js-basic-example').DataTable({
         responsive: true
     });
@@ -103,7 +108,7 @@ $(function () {
     });
 
 
-
+    $(".select2").select2();
 
 
 });

@@ -20,4 +20,9 @@
     <link href="dist/css/buttons.dataTables.min.css" rel="stylesheet">
     <link href="vendor/jquery-datatable/jquery.dataTables.min.css" rel="stylesheet">
 
+    <!-- Select2 -->
+    <link rel="stylesheet" href="vendor/select2/select2.min.css">
+
+
+
 </head>
