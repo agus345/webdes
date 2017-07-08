@@ -21,8 +21,13 @@
 
           if (isset($_GET['del'])) {
               hapus_permanen($conn,$_GET['del']); //insert ke database
+              echo "ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd".$_GET['del'];
+              echo "dcibjlwbijjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj";
+              die;
               alert_warning("Perdes Telah Dihapus Secara Permanen"); //tampilin pesan data berhasil disimpan
               echo '<meta http-equiv="refresh" content="2;url=?mod=perdes" />';
+          }else{
+            echo "hahahahahahahahaahahah";
           }
           ?>
             <div class="col-lg-12" align="center">
@@ -62,7 +67,10 @@
                 <td><?php echo $data['aturan'];?></td>
                 <td>
                   <?php
-                    editonrow($modname, $data['id']) ?> | <?php if (isset($_POST['sampah'])){ nonaktifonrow($modname, $data['id']);?> | <?php deleterow($modname, $data['id']); }else{ aktifonrow($modname, $data['id']);}
+                    editonrow($modname, $data['id']) ?> | 
+                    <?php if (isset($_POST['sampah'])){ nonaktifonrow($modname, $data['id']);?> | <?php deleterow($modname, $id); }else{ 
+                      aktifonrow($modname, $data['id'],'Yakin Ingin Dihapus?');
+                      /}
                   ?>
                 </td>
             </tr>

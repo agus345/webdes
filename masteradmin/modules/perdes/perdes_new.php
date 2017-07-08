@@ -25,6 +25,19 @@
               //echo '<meta http-equiv="refresh" content="2;url=?mod=pengguna" />';
           }
           ?>
+            
+            <div class="row">
+
+            <?php
+            if (isset($_POST['tambah'])) {
+              $var = $_POST['perdes'];             
+              $sql = "INSERT INTO perdes (aturan) VALUES ('$var')";
+              mysqli_query($conn,$sql) or die(mysqli_connect_error());
+              //insert($conn,$var); //insert ke database      
+              alert_success("{Perdes} Berhasil Ditambahkan"); //tampilin pesan data berhasil disimpan
+              echo '<meta http-equiv="refresh" content="2;url=?mod=perdes" />';
+            }
+            ?>
 
             <div class="col-lg-12" align="center">
                 <h1 class="page-header">Halaman Perdes Desa</h1>
@@ -34,18 +47,15 @@
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <h3>Form Tambah Perdes</h3>
-                             <form method="post" enctype="multipart/form-data" enctype="multipart/form-data" >
-                               <form method="post" method="post" enctype="multipart/form-data" >
-                                <div class="form-group input-group">
+                               <form method="post">
+                                <div class="form-group">
                                 <h1>Nama peraturan</h1>
-                                  <textarea rows="10" cols="100" name="sambutan"><?php echo $data['aturan']; ?></textarea>
+                                  <textarea rows="5" class="form-control" name="perdes" placeholder="Masukan no perdes, dan isi perdes"></textarea>
                                 </div>
                                  <div class="box-footer">
-                                  <div class="row ">
-                                    <div class="col-lg-12" align="right">                                   
+                                    <div class="col-lg-12" align="right">
                                       <button type="submit" name="tambah" class="btn btn-primary">Tambah</button>
                                     </div>
-                                  </div>
                                 </div>
                               </form>
                         </div>
@@ -68,4 +78,5 @@
 
         </div>
     </div>
+</div>
 </div>

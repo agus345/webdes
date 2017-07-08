@@ -4,12 +4,13 @@
                  <?php
                     $id = (int) $_GET['id']; //ambil id
                     if (isset($_POST['ubah'])) { //ketika tombol ubah diklik
-                        ubah($conn); //ubah data
+                      $perdes = $_POST['aturan'];
+                        ubah($conn,$perdes,$id); //ubah data
                         alert_success("Data Berhasil Diubah");
                         echo '<meta http-equiv="refresh" content="2;url=?mod=perdes" />';
                     }
 
-                    $row = tampil_perdes_ubah($conn,$id); //tampilkan data
+                    tampil_ubah($conn,$id); //tampilkan data
 
                   ?>
 
@@ -20,25 +21,25 @@
                   <div class="col-lg-12">
                       <div class="panel panel-default">
                           <div class="panel-body">
-                              <h3>Form Tambah Peraturan Desa</h3>
-                               <form method="post" enctype="multipart/form-data" enctype="multipart/form-data" >
-                                 <div class="col-md-4 col-md-offset-0">
+                              <h3>Form Edit Peraturan Desa</h3>
+                               <form method="post">
+                                 <div class="col-md-12">
                                      <div class="form-group">
-                                          <label>Nama perdes</label>
-                                          <input class="form-control" placeholder="Masukkan perdes" name="aturan" value="<?=$row['aturan']?>">
+                                          <label>Isi Perdes</label>
+                                          <textarea class="form-control" placeholder="Masukkan Perubahan perdes" name="aturan" cols="5"></textarea>
                                       </div>
-                                  </div>                                                                   
-                                        <button type="submit" name="ubah" class="btn btn-primary">Simpan</button>
-                                      </div>
-                                    </div>
+                                      <button type="submit" name="ubah" class="btn btn-primary">Simpan</button>
                                   </div>
-                                </form>
-                          </div>
-                      </div>
-                  </div>
-                  </div>
-                <!-- /.col-lg-12 -->
-            </div>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                    </div>
                 </div>
             </div>
-       </div>
+            </div>
+          <!-- /.col-lg-12 -->
+      </div>
+          </div>
+      </div>
+ </div>
