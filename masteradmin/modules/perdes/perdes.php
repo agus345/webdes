@@ -50,13 +50,7 @@
                 <th>Aksi</th>
             </tr>
         </thead>
-        <tfoot>
-            <tr>
-                <th>No</th>
-                <th>Peraturan</th>
-                <th>Aksi</th>
-            </tr>
-        </tfoot>
+        
         <tbody>
             <?php
                 $i = 1;

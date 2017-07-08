@@ -69,17 +69,7 @@
                 <th>Aksi</th>
             </tr>
         </thead>
-        <tfoot>
-            <tr>
-                <th>No</th>
-                <th>Judul</th>
-                <th>Deskripsi Singkat</th>
-                <th>Isi</th>
-                <th>Foto</th>
-                <th>Kategori Artikel</th>
-                <th>Aksi</th>
-            </tr>
-        </tfoot>
+        
         <tbody>
             <?php
                 $i = 1;

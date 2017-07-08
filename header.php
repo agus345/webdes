@@ -35,6 +35,7 @@
                             </li>
                             <li><a href="galeri">Gallery</a></li>
                             <li><a href="sekilas-berita">Berita</a></li>
+                            <li><a href="#blogstat">Anggaran Desa</a></li>
 
                             <!-- <li><a href="about-us.html">About Us</a></li>
                             <li><a href="services.html">Services</a></li>

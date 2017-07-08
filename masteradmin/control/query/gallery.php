@@ -65,6 +65,4 @@ function ubah($a,$upic){
 }
 // Proses Ubah End
 
-
-
 ?>

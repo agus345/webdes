@@ -38,8 +38,9 @@
               <div class="col-lg-12">
                      <?php                      
                         $id = $_GET['id'];
-                            while ($gallery = mysqli_fetch_array($result,MYSQLI_ASSOC)) {
+                            while ($data = mysqli_fetch_array($result,MYSQLI_ASSOC)) {
                       ?>
+                      
                               <div class="col-xs-3">
                                   <p class="page-header">Judul : <?php echo $data['judul'];?></p>
                                     <img src="../images/gallery/<?php echo $data['foto']; ?>" class="img-responsive img-blog"  width="250px" height="250px" />

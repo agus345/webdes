@@ -5,10 +5,10 @@ function update_last($a,$id,$new_pic){
   mysqli_query($a,$sql) or die(mysqli_connect_error());
 }
 
-// function tampil_last_id($a){
-//   $row = mysqli_fetch_array(mysqli_query($a,"SELECT * FROM banner order by id desc limit 1"),MYSQLI_ASSOC);
-//   return $row;
-// }
+function tampil_last_id($a){
+  $row = mysqli_fetch_array(mysqli_query($a,"SELECT * FROM banner order by id desc limit 1"),MYSQLI_ASSOC);
+  return $row;
+ }
 
 
 

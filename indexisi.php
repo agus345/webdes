@@ -100,7 +100,7 @@ require_once 'slider.php';
         </div>
     </section><!--/#blog-->
 
-    <section id="blog" class="container">        
+    <section id="blogstat" class="container">        
              <div align="center">
             <ol class="breadcrumb">
                 <li><a href=""> <h1 style="color:black "><b>DATA STATISTIK</b></h1></a></li>

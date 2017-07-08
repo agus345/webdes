@@ -19,8 +19,8 @@
                         <?php
 
 // Upload versi tidak menggunakan function 
-
-/*if (isset($_POST['tambah'])) {
+/*
+if (isset($_POST['tambah'])) {
 
               $judul = $_POST['judul'];// user name
              
@@ -55,35 +55,29 @@
               insert($conn,$userpic); //insert ke database              
               alert_success("Data gallery Berhasil ditambahkan .."); //tampilin pesan data berhasil disimpan
               echo '<meta http-equiv="refresh" content="1;url=?mod=gallery" />';
-          }  */       
+          }         */
 
-// end                        
+// end 
 
-
-
-
-
-
-
-          if (isset($_POST['tambah'])) {
-             $var = $_FILES['user_image']['name'];
-            if (strlen($var) > 0) {
-              $path = "../images/gallery/";
-        //      unlink("../img/".$row['gambar']); //hapus dulu gambar yang lama
-              upload_file(user_image, $path); //upload berkas baru
+        if (isset($_POST['tambah'])) {
+           $var = $_FILES['user_image']['name'];
+          if (strlen($var) > 0) {
+             $path = "../images/gallery/";
+             // unlink("../img/".$row['gambar']); //hapus dulu gambar yang lama
+             upload_file(user_image, $path); //upload berkas baru
              $gambar = $path.$var;
              $gambar_crop_nama = "gallery-".$var;
              $gambar_crop = $path."gallery-".$var;
-              cropImage(1169, 487, "$gambar", 'jpg', "$gambar_crop");
-            }
-            insert($conn,$gambar_crop_nama); //insert ke database      
-            alert_success("gallery Berhasil Ditambahkan"); //tampilin pesan data berhasil disimpan
+             cropImage(1169, 487, "$gambar", 'jpg', "$gambar_crop");
+          }
+          insert($conn,$gambar_crop_nama); //insert ke database      
+          alert_success("gallery Berhasil Ditambahkan"); //tampilin pesan data berhasil disimpan
         ?>
         <meta http-equiv="refresh" content="1;url=?mod=gallery" />
         <?php    
         }
 
-                        ?>
+        ?>
                             <h3>Form Tambah gallery</h3>
                               <form method="post" enctype="multipart/form-data" class="form-horizontal">
                               <?php
@@ -100,11 +94,17 @@
                                       <input type="text" class="form-control" name="judul" placeholder="Masukkan Judul gallery" required autofocus>
                                     </div>
                                 </div>
+                               <!--  <div class="row show-grid">
+                                    <div class="col-xs-4">
+                                      <textarea class="form-control" name="detail" rows=5 placeholder="Masukkan detail gallery"></textarea>
+                                    </div>
+                                </div> -->
                                 <div class="row show-grid">
                                     <div class="col-xs-6 col-sm-4">
                                       <input class="input-group" type="file" name="user_image" accept="image/*" />
                                     </div>
                                 </div>
+                                
 
                                 <div class="box-footer">
                                   <div class="row ">

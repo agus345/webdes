@@ -52,15 +52,7 @@
                 <th>Aksi</th>
             </tr>
         </thead>
-        <tfoot>
-            <tr>
-                <th>No</th>
-                <th>Nama</th>
-                <th>Jabatan</th>
-                <th>Foto</th>
-                <th>Aksi</th>
-            </tr>
-        </tfoot>
+       
         <tbody>
             <?php
                 $i = 1;

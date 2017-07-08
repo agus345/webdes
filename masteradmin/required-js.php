@@ -85,18 +85,14 @@ $(function () {
                                     */
 
                                 },
-                                        'pdf',
-                                        'print'
-
-
-                                /*
-
+                                'pdf',
+                                'print'
                                 'copy',
                                 'excel',
                                 'csv',
                                 'pdf',
                                 'print'
-                                */
+                                
 
                             ]
 
