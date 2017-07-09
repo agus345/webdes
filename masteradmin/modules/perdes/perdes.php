@@ -70,7 +70,7 @@
                     editonrow($modname, $data['id']) ?> | 
                     <?php if (isset($_POST['sampah'])){ nonaktifonrow($modname, $data['id']);?> | <?php deleterow($modname, $id); }else{ 
                       aktifonrow($modname, $data['id'],'Yakin Ingin Dihapus?');
-                      /}
+                    }
                   ?>
                 </td>
             </tr>
