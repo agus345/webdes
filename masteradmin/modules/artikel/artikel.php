@@ -35,11 +35,11 @@
                 <a class="btn btn-default" href="?mod=artikel_new"> <span class="glyphicon glyphicon-plus"></span> &nbsp; Tambah Artikel </a> 
                 <br/>
                 <br/>
-                    <div class="panel panel-default">
+                    <!-- <div class="panel panel-default">
                         <div class="panel-body">
                             <form method="post" action="">
                               <?php if(!isset($_POST['sampah'])){ ?>
-                                <button type="submit" name="sampah" class="btn btn-warning">Pengguna Tidak Aktif</button>
+                                <button type="submit" name="sampah" class="btn btn-warning">Artikel Tidak Aktif</button>
                               <?php } else { ?>
                                 <button type="submit" class="btn btn-primary">Kembali</button>
                               <?php } ?>
@@ -49,7 +49,7 @@
                             
                         </div>
 
-                    </div>
+                    </div> -->
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -98,8 +98,11 @@
                 <td>
 
                     <?php 
-                      editonrow($modname, $data['id']) ?> | <?php if (isset($_POST['sampah'])){ nonaktifonrow($modname, $data['id']);?> | <?php deleterow($modname, $data['id']); }else{ aktifonrow($modname, $data['id'],'Apakah ingin dihapus ?');}
+                      editonrow($modname, $data['id']) ?> | <?php deleterow($modname, $data['id']); 
                     ?>
+                    <!-- <?php 
+                      editonrow($modname, $data['id']) ?> | <?php if (isset($_POST['sampah'])){ nonaktifonrow($modname, $data['id']);?> | <?php deleterow($modname, $data['id']); }else{ aktifonrow($modname, $data['id'],'Apakah ingin dihapus ?');}
+                    ?> -->
                 </td>
             </tr>
              <?php

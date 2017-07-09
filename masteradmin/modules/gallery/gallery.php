@@ -42,7 +42,7 @@
                       ?>
                       
                               <div class="col-xs-3">
-                                  <p class="page-header">Judul : <?php echo $data['judul'];?></p>
+                                  <p class="page-header">Deskripsi : <?php echo $data['alt'];?></p>
                                     <img src="../images/gallery/<?php echo $data['foto']; ?>" class="img-responsive img-blog"  width="250px" height="250px" />
                                   <p class="page-header">
                                     <span>
@@ -54,7 +54,6 @@
                               </div>                                    
                                         
                      <?php
-                        $i++;
                         }
                     ?>
                 </div>
