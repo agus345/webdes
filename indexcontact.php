@@ -9,7 +9,13 @@ require_once 'header.php';
 
 ?>
 
-
+<section id="blog" class="container">        
+	<div align="center">
+		<ol class="breadcrumb">
+		<li><a href=""> <h1 style="color:black "><b>Kontak Desa Pasirkaliki</b></h1></a></li>
+		</ol>
+	</div>
+	</section>
 
 
 <?php

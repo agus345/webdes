@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Desa xxx">
-        <meta name="author" content="Mokhamad Aripin">
+        <meta name="author" content="Agus Badrussalam">
         <title>Aplikasi Desa</title>
 
         <!-- Bootstrap -->

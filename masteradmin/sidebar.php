@@ -21,7 +21,7 @@
                             <a href="?mod=perdes"><i class="fa  fa-book"></i> Perdes</a>
                         </li>
                         <li>
-                            <a href="?mod=strukdes"><i class="fa  fa-sitemap fa-fw"></i> Struktur Desa</a>
+                            <a href="?mod=sejarah"><i class="fa  fa-boo"></i> Sejarah Desa</a>
                         </li>
 
 

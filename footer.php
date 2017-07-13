@@ -17,7 +17,7 @@
                 <div class="col-sm-6">
                     <ul class="pull-right">
                         <li><a href="home">Home</a></li>
-                        <li><a href="#">Kontak</a></li>
+                        <li><a href="indexcontact.php">Kontak</a></li>
                         <li><a href="#">Layanan Pengaduan</a></li>
                     </ul>
                 </div>
