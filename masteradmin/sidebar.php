@@ -6,13 +6,13 @@
                         </li>
 
                         <li>
-                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="index.php"><i class="fa fa-dashboard "></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="?mod=banner"><i class="fa fa-edit fa-fw"></i> Banner</a>
+                            <a href="?mod=banner"><i class="fa fa-image-o"></i> Banner</a>
                         </li>
                         <li>
-                            <a href="?mod=artikel"><i class="fa fa-edit fa-fw"></i> Artikel</a>
+                            <a href="?mod=artikel"><i class="fa fa-edit"></i> Artikel</a>
                         </li>
                         <li>
                             <a href="?mod=gallery"><i class="fa  fa-film"></i> Gallery</a>
@@ -21,7 +21,10 @@
                             <a href="?mod=perdes"><i class="fa  fa-book"></i> Perdes</a>
                         </li>
                         <li>
-                            <a href="?mod=sejarah"><i class="fa  fa-boo"></i> Sejarah Desa</a>
+                            <a href="?mod=sejarah"><i class="fa  fa-history"></i> Sejarah Desa</a>
+                        </li>
+                        <li>
+                            <a href="?mod=statistik"><i class="fa  fa-bar-chart"></i> Statistik desa</a>
                         </li>
 
 

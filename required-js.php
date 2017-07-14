@@ -50,9 +50,6 @@
                             $query_total = mysqli_query($con,$sql_total ) or die(mysql_error());
                             while( $data = mysqli_fetch_array( $query_total ) )
                             {
-
-
-
                                 $total = $data['anggaran'];                 
                             }             
                         ?>

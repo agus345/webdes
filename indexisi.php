@@ -111,7 +111,8 @@ require_once 'slider.php';
                 <div class="center wow fadeInDown">
                     <div class="col-md-12">
                             <div class="panel panel-primary">
-                                <div class="panel-heading" align="center"><P>LAPORAN PERTANGGUNGJAWABAN REALISASI PELAKSANAAN</P> <P>ANGGARAN PENDAPATAN DAN BELANJA DESA</P> <P>PEMERINTAHAN DESA PASIRKALIKI</P> <P>TAHUN ANGGARAN 2016</P></div>
+                                <div class="panel-heading" align="center" style="background-color: #366f33;"><P>LAPORAN PERTANGGUNGJAWABAN REALISASI PELAKSANAAN ANGGARAN PENDAPATAN DAN BELANJA DESA<br>
+                                PEMERINTAHAN DESA PASIRKALIKI TAHUN ANGGARAN 2016</P></div>
                                     <div class="col-md-12">
                                         <div class="panel-body">
                                             <div id ="anggaran"></div>
@@ -125,7 +126,8 @@ require_once 'slider.php';
                     <div class="container" style="margin-top:20px">
                         <div class="col-md-12">
                             <div class="panel panel-primary">
-                                <div class="panel-heading" align="center"><P>LAPORAN PERTANGGUNGJAWABAN REALISASI PELAKSANAAN</P> <P>ANGGARAN PENDAPATAN DAN BELANJA DESA</P> <P>PEMERINTAHAN DESA PASIRKALIKI</P> <P>TAHUN ANGGARAN 2016</P></div>
+                                <div class="panel-heading" align="center" style="background-color: #366f33;"><P>LAPORAN PERTANGGUNGJAWABAN REALISASI PELAKSANAAN ANGGARAN PENDAPATAN DAN BELANJA DESA<br>
+                                PEMERINTAHAN DESA PASIRKALIKI TAHUN ANGGARAN 2016</P></div>
                                     <div class="col-md-12">
                                         <div class="panel-body">
                                             <div id ="realisasi"></div>

@@ -10,8 +10,8 @@
                             Licensing information: https://bootstrapmade.com/license/
                             Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Gp
                         -->
-                        &copy; 2017 - <?php echo date('Y');?> Site by <a href="#"> NONAME</a>
-                        Theme  by <a href="https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-templat/"> Gp Theme - BootstrapMade</a>
+                        &copy; <?php=date('Y');?> - <?php echo date('Y');?> Site by <a href="#"> NONAME</a>
+                        Theme  by <a href="">@ABCD</a>
                     </div>
                 </div>
                 <div class="col-sm-6">
