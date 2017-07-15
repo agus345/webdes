@@ -3,7 +3,7 @@
 function ubahfoto($a,$id){
   $sql = "UPDATE artikel set foto='' where id = '$id'";
   mysqli_query($a,$sql) or die(mysqli_connect_error());
-  
+
 }
 
 
@@ -18,7 +18,7 @@ function ubah($a,$upic,$id){
 }
 
 function tampil_ubah($a,$id){
-  $row = mysqli_fetch_array(mysqli_query($a,"SELECT * FROM artikel WHERE id = '$id' "),MYSQLI_ASSOC);
+  $row = mysqli_fetch_array(mysqli_query($a,"SELECT * FROM anggarandesa WHERE id = '$id' "),MYSQLI_ASSOC);
   return $row;
 }
 

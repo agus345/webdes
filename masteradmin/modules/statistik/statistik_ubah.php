@@ -6,11 +6,18 @@
                     $row = tampil_ubah($conn,$id); //tampilkan data
 
                     if (isset($_POST['ubah'])) { //ketika tombol ubah diklik
-                     
-                        ubah($conn,$var,$id); //ubah data
+
+                      $uraian = $_POST['uraian'];
+                      $anggaran = $_POST['anggaran'];
+                      $realisasi = $_POST['realisasi'];
+
+                      $total = $anggaran + $realisasi;
+                      $sql = "update anggarandesa set uraian=$uraian, anggaran=$anggaran, realisasi=$realisasi, total = $total where id = $id)";
+                    
+                  mysqli_query($conn,$sql);
                         alert_success("Data Berhasil Diubah");
-                        echo '<meta http-equiv="refresh" content="2;url=?mod=artikel" />';
-                    }                    
+                        echo '<meta http-equiv="refresh" content="2;url=?mod=statistik" />';
+                    }
                   ?>
 
                   <div class="col-lg-12" align="center">
@@ -20,29 +27,29 @@
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <h3>Form Edit Data Statistik</h3>
-                             <form method="post" > 
+                             <form method="post" >
                                 <div class="col-lg-12">
                                    <div class="form-group">
                                         <label></label>
-                                        <input type="text" class="form-control" name="uraian">
+                                        <input type="text" class="form-control" value="<?=$row['uraian'] ?>" name="uraian">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                    <div class="form-group">
                                         <label></label>
-                                        <input type="text" class="form-control" Placeholder="Masukkan Anggaran" name="anggaran">
+                                        <input type="text" class="form-control" value="<?=$row['anggaran'] ?>" name="anggaran">
                                     </div>
-                                </div>     
+                                </div>
                                 <div class="col-lg-12">
                                    <div class="form-group">
                                         <label></label>
-                                        <input type="text" class="form-control" Placeholder="Masukkan Realisai" name="realisasi">
+                                        <input type="text" class="form-control" value="<?=$row['realisasi'] ?>" name="realisasi">
                                     </div>
-                                </div>                                
+                                </div>
                                  <div class="box-footer">
                                   <div class="row ">
-                                    <div class="col-lg-12" align="right">                                   
-                                      <button type="submit" name="tambah" class="btn btn-primary">Tambah</button>
+                                    <div class="col-lg-12" align="right">
+                                      <button type="submit" name="ubah" class="btn btn-primary">Ubah</button>
                                     </div>
                                   </div>
                                 </div>
