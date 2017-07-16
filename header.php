@@ -19,7 +19,7 @@
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="profil-desa">Profil Desa <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                   <li><a href="sejarah-singkat">Sejarah Singkat</a></li>
-                                  <li><a href="#">Sejarah KaDes</a></li>
+                                  <li><a href="sejarah-kades">Sejarah KaDes</a></li>
                                   <li><a href="struktur-desa">Struktur Desa</a></li>
                                   <li><a href="#">PerDes</a></li>
                                   <li><a href="sambutan-kades">Sambutan Kades</a></li>

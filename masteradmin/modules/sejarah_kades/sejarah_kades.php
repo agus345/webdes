@@ -22,7 +22,7 @@
           if (isset($_GET['del'])) {
               hapus_permanen($conn,$_GET['del']);
               alert_warning("Perdes Telah Dihapus Secara Permanen"); //tampilin pesan data berhasil disimpan
-              echo '<meta http-equiv="refresh" content="2;url=?mod= sejarah_kades" />';
+              echo '< content="2;url=?mod=sejarah_kades" />';
           }
           ?>
             <div class="col-lg-12" align="center">

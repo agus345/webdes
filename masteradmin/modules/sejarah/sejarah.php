@@ -2,6 +2,8 @@
     <div class="container-fluid">
         <div class="row">
           <?php
+          error_reporting( ~E_NOTICE );
+
           $modname = $_GET['mod']; //ambil nama modul
 
           if(isset($_GET['id'])){
@@ -12,82 +14,68 @@
             aktif($conn,$id);
           }
 
-
-          if (isset($_POST['sampah'])){
-            $result = tampil_nonaktif($conn);
-          } else {
-            $result = tampil($conn);
-          }     
-
           if (isset($_GET['del'])) {
-              hapus_permanen($conn,$_GET['del']);
-              alert_warning("sejarah Telah Dihapus Secara Permanen"); //tampilin pesan data berhasil disimpan
-              echo '<meta http-equiv="refresh" content="2;url=?mod=sejarah" />';
+              $id= $_GET['del'];
+              $row = tampil_ubah($conn,$id); //tampilkan data
+              $path = "../images/gallery/";
+              unlink($path.$row['foto']);
+
+              hapus_permanen($conn,$_GET['del']); //delete ke database              
+              echo '<meta http-equiv="refresh" content="1;url=?mod=sejarah" />';
           }
+
+            $result = tampil($conn);
+
           ?>
-            <div class="col-lg-12" align="center">
-                <h1 class="page-header">Halaman Sejarah Desa</h1>
-            </div>           
-            <div class="row">
-
-                <div class="col-lg-12">
-
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <a class="btn btn-default" href="?mod=sejarah_new"> <span class="glyphicon glyphicon-plus"></span> &nbsp; Tambah </a>                                                       
-                        </div>
-
-                    </div>
-                </div>
-                <!-- /.col-lg-12 -->
+            <div class="page-header">
+              <i class="fa fa-dashboard fa-fw"></i> <a href="index.php">Dashboard</a> / <a href="?mod=sejarah">Sejarah</a>
             </div>
+            <div>
+              <a class="btn btn-default" href="?mod=sejarah_new"> <span class="glyphicon glyphicon-plus"></span> &nbsp; Tambah Sejarah </a> 
+              
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+              <table class="table-bordered">
+                        <tr>
+                          <th>No</th>
+                          <th>Judul</th>
+                          <th>Isi</th>
+                          <th>Foto</th>
+                        </tr>
+                     <?php  
+                     $no = 0;                    
+                        $id = $_GET['id'];
 
-    <table class="table table-bordered table-striped table-hover dataTable" id="example">
-        <thead>
-            <tr>
-                <th>No</th>
-                <th>Judul</th>
-                <th>Isi</th>
-                <th>foto</th>
-                <th>Aksi</th>
-            </tr>
-        </thead>
-        
-        <tbody>
-            <?php
-                $i = 1;
-                $id = $_GET['id'];
-                    while ($data = mysqli_fetch_array($result,MYSQLI_ASSOC)) {
-            ?>
-            <tr>
-                <td><?php echo $i;?></td>
-                <td><?php echo $data['judul'];?></td>
-                <td><?php echo $data['isi'];?></td>
-                <td>
-                   <?php
-                        if ($data['foto'] == "") {
-                            ?>
-                        <img class="img-responsive img-blog" src="../images/no-image.png" width="25%" alt="Sejarah Desa" />
-                        <?php
-                        }else{?>
-                        <img class="img-responsive img-blog" src="../images/sejarah/<?php echo $data['foto'];?>" width="25%" alt="<?php echo $data['nama'];?>" />
-                        <?php
+                            while ($data = mysqli_fetch_array($result,MYSQLI_ASSOC)) {
+                              $no++;
+                      ?>
+                      
+                        <tr>
+                          <td><?=$no;?></td>
+                          <td><?=$data['judul'];?></td>
+                          <td><?=$data['isi'];?></td>
+                          <td><?=$data['foto'];?></td>
+                        </tr>
+                      
+                      
+                              <!-- <div class="col-xs-3">
+                                  <p class="page-header">Deskripsi : <?php echo $data['alt'];?></p>
+                                    <img src="../images/gallery/<?php echo $data['foto']; ?>" class="img-responsive img-blog"  width="250px" height="250px" />
+                                  <p class="page-header">
+                                    <span>
+                                    <a class="btn btn-info" href="?mod=<?=$modname?>_ubah&id=<?php echo $data['id']?>" title="click for edit" onclick="return confirm('sure to edit ?')"><span class="glyphicon glyphicon-edit"></span> Edit</a> 
+                                    <a class="btn btn-danger" href="?mod=<?=$modname?>&del=<?php echo $data['id']?>" title="click for delete" onclick="return confirm('sure to delete ?')"><span class="glyphicon glyphicon-remove-circle"></span> Delete</a>                                     
+                                    </span>
+                                  </p>
+                              </div> -->                                    
+                                        
+                     <?php
                         }
                     ?>
-                </td>
-                <td>
-                    <?php 
-                      editonrow($modname, $data['id']) ?> | <?php deleterow($modname, $data['id']);
-                    ?>
-                </td>
-            </tr>
-             <?php
-                $i++;
-                }
-            ?>
-        </tbody>
-    </table>
+                    </table>
+                </div>
+            </div>
 
-        </div>
     </div>
 </div>

@@ -15,6 +15,7 @@ RewriteRule ^struktur-desa indexstruktur.php [L]
 RewriteRule ^galeri indexgalery.php [L]
 RewriteRule ^sejarah-singkat indexsejarahsingkat.php [L]
 RewriteRule ^sambutan-kades indexsambutan.php [L]
+RewriteRule ^sejarah-kades indexsambutan.php [L]
 
 
 Options All -Indexes
