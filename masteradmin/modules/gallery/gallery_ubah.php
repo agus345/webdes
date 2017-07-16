@@ -12,8 +12,7 @@
              $var = $_FILES['user_image']['name'];
             if (strlen($var) > 0) {
               $path = "../images/gallery/";
-              unlink($path.$row['foto']);        
-              unlink($path.$row['foto']);        
+              unlink($path.$row['foto']);             
               upload_file(user_image, $path); //upload berkas baru
              $gambar = $path.$var;
              $gambar_crop_nama = "gallery-".$var;
