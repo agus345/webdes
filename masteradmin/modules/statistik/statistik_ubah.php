@@ -12,9 +12,11 @@
                       $realisasi = $_POST['realisasi'];
 
                       $total = $anggaran + $realisasi;
-                      $sql = "update anggarandesa set uraian=$uraian, anggaran=$anggaran, realisasi=$realisasi, total = $total where id = $id)";
+                      $sql = "UPDATE anggarandesa set uraian='$uraian', anggaran=$anggaran, realisasi=$realisasi, total = $total where id = $id"; 
+                      /*print_r($sql);
+                      die; */                    
                     
-                  mysqli_query($conn,$sql);
+                        mysqli_query($conn,$sql);
                         alert_success("Data Berhasil Diubah");
                         echo '<meta http-equiv="refresh" content="2;url=?mod=statistik" />';
                     }
