@@ -21,12 +21,12 @@
 
           if (isset($_GET['del'])) {
               hapus_permanen($conn,$_GET['del']);
-              alert_warning("sejarah Telah Dihapus Secara Permanen"); //tampilin pesan data berhasil disimpan
-              echo '<meta http-equiv="refresh" content="2;url=?mod=sejarah" />';
+              alert_warning("Perdes Telah Dihapus Secara Permanen"); //tampilin pesan data berhasil disimpan
+              echo '<meta http-equiv="refresh" content="2;url=?mod= sejarah_kades" />';
           }
           ?>
             <div class="col-lg-12" align="center">
-                <h1 class="page-header">Halaman Sejarah Desa</h1>
+                <h1 class="page-header">Halaman Sejarah Kepala Desa</h1>
             </div>           
             <div class="row">
 
@@ -34,7 +34,7 @@
 
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <a class="btn btn-default" href="?mod=sejarah_new"> <span class="glyphicon glyphicon-plus"></span> &nbsp; Tambah </a>                                                       
+                            <a class="btn btn-default" href="?mod=kades_new"> <span class="glyphicon glyphicon-plus"></span> &nbsp; Tambah </a>                                                       
                         </div>
 
                     </div>
@@ -46,9 +46,9 @@
         <thead>
             <tr>
                 <th>No</th>
-                <th>Judul</th>
-                <th>Isi</th>
-                <th>foto</th>
+                <th>Nama</th>
+                <th>Jabatan</th>
+                <th>masa Jabatan</th>
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -61,23 +61,12 @@
             ?>
             <tr>
                 <td><?php echo $i;?></td>
-                <td><?php echo $data['judul'];?></td>
-                <td><?php echo $data['isi'];?></td>
-                <td>
-                   <?php
-                        if ($data['foto'] == "") {
-                            ?>
-                        <img class="img-responsive img-blog" src="../images/no-image.png" width="25%" alt="Sejarah Desa" />
-                        <?php
-                        }else{?>
-                        <img class="img-responsive img-blog" src="../images/sejarah/<?php echo $data['foto'];?>" width="25%" alt="<?php echo $data['nama'];?>" />
-                        <?php
-                        }
-                    ?>
-                </td>
-                <td>
-                    <?php 
-                      editonrow($modname, $data['id']) ?> | <?php deleterow($modname, $data['id']);
+                <td><?php echo $data['nama'];?></td>
+                <td><?php echo $data['jabatan'];?></td>
+                <td><?php echo $data['masa_jabatan'];?></td>
+             <td>
+                  <?php 
+                      editonrow($modname, $data['id']) ?> | <?php deleterow($modname, $data['id']); 
                     ?>
                 </td>
             </tr>

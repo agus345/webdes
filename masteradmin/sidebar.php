@@ -21,7 +21,13 @@
                             <a href="?mod=perdes"><i class="fa  fa-book"></i> Perdes</a>
                         </li>
                         <li>
+                            <a href="?mod=strukdes"><i class="fa  fa-sitemap fa-fw"></i> Struktur Desa</a>
+                        </li>
+                        <li>
                             <a href="?mod=sejarah"><i class="fa  fa-history"></i> Sejarah Desa</a>
+                        </li>
+                        <li>
+                            <a href="?mod=sejarah_kades"><i class="fa  fa-history"></i> Sejarah Kepala Desa</a>
                         </li>
                         <li>
                             <a href="?mod=statistik"><i class="fa  fa-bar-chart"></i> Statistik desa</a>
