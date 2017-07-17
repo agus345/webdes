@@ -60,7 +60,8 @@ if (isset($_POST['tambah'])) {
 // end 
 
         if (isset($_POST['tambah'])) {
-           $var = $_FILES['user_image']['name'];
+          $var = $_FILES['user_image']['name'];
+          $ext = pathinfo($var, PATHINFO_EXTENSION);   
           if (strlen($var) > 0) {
              $path = "../images/gallery/";
              // unlink("../img/".$row['gambar']); //hapus dulu gambar yang lama
@@ -68,7 +69,7 @@ if (isset($_POST['tambah'])) {
              $gambar = $path.$var;
              $gambar_crop_nama = "gallery-".$var;
              $gambar_crop = $path."gallery-".$var;
-             cropImage(1169, 487, "$gambar", 'jpg', "$gambar_crop");
+             cropImage(1169, 487, "$gambar", $ext, "$gambar_crop");
           }
           insert($conn,$gambar_crop_nama); //insert ke database      
           alert_success("gallery Berhasil Ditambahkan"); //tampilin pesan data berhasil disimpan
