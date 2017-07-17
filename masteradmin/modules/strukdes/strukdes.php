@@ -34,7 +34,7 @@
 
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <a class="btn btn-default" href="?mod=strukdes_new"> <span class="glyphicon glyphicon-plus"></span> &nbsp; Tambah </a>                                                       
+                            <a class="btn btn-default" href="?mod=strukdes_new"> <span class="glyphicon glyphicon-plus"></span> &nbsp; Tambah strukdes </a>                                                       
                         </div>
 
                     </div>

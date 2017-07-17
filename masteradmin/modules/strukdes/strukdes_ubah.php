@@ -39,7 +39,7 @@
                   <div class="col-lg-12">
                       <div class="panel panel-default">
                           <div class="panel-body">
-                              <h3>Form Tambah Struktur Desa</h3>
+                              <h3>Form Edit Struktur Desa</h3>
                                <form method="post" enctype="multipart/form-data" enctype="multipart/form-data" >
                                  <div class="col-md-4 col-md-offset-0">
                                      <div class="form-group">

@@ -5,7 +5,6 @@
             $id = (int) $_GET['id']; //ambil id
             $row = tampil_ubah($conn,$id); //tampilkan data
 
-
           $modname = $_GET['mod']; //ambil nama modul
 
         if (isset($_POST['ubah'])) {
