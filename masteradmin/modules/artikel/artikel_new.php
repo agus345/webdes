@@ -32,18 +32,16 @@
 
             <?php
             if (isset($_POST['tambah'])) {
-              $var = $_FILES['user_image']['name'];
-              $ext = pathinfo($var, PATHINFO_EXTENSION);             
-            if (strlen($var) > 0) {
-              $path = "../images/artikel/";
-        //      unlink("../img/".$row['gambar']); //hapus dulu gambar yang lama
-              upload_file(user_image, $path); //upload berkas baru
-              $gambar = $path.$var;
-              $gambar_crop_nama = "artikel-".$var;
-              $gambar_crop = $path."artikel-".$var;
-              cropImage(1169, 487, "$gambar", $ext, "$gambar_crop");
-            }
-            insert($conn,$gambar_crop_nama); //insert ke database
+               $var = $_FILES['user_image']['name'];
+               $ext = pathinfo($var, PATHINFO_EXTENSION);
+
+               $new_name=time().'.'.$ext;
+               $file='user_image'; //name pada inputan type file
+               $dir='../images/artikel/';
+               $width=400;//satuan dalam pixel / px
+               UploadImageResize($new_name,$file,$dir,$width);
+
+            insert($conn,$new_name); //insert ke database
             alert_success("artikel Berhasil Ditambahkan"); //tampilin pesan data berhasil disimpan
               echo '<meta http-equiv="refresh" content="2;url=?mod=artikel" />';
             }

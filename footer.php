@@ -10,7 +10,7 @@
                             Licensing information: https://bootstrapmade.com/license/
                             Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Gp
                         -->
-                        &copy; <?php=date('Y');?> - <?php echo date('Y');?> Site by <a href="#"> NONAME</a>
+                        &copy; <?php=date('Y');?> - <?php echo date('Y');?> Site by <a href="#">Desa Pasirkaliki</a>
                         Theme  by <a href="">@ABCD</a>
                     </div>
                 </div>
@@ -18,7 +18,7 @@
                     <ul class="pull-right">
                         <li><a href="home">Home</a></li>
                         <li><a href="indexcontact.php">Kontak</a></li>
-                        <li><a href="#">Layanan Pengaduan</a></li>
+                       <!-- <li><a href="#">Layanan Pengaduan</a></li>-->
                     </ul>
                 </div>
             </div>

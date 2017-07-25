@@ -67,11 +67,9 @@ if (isset($_POST['tambah'])) {
              // unlink("../img/".$row['gambar']); //hapus dulu gambar yang lama
              upload_file(user_image, $path); //upload berkas baru
              $gambar = $path.$var;
-             $gambar_crop_nama = "gallery-".$var;
-             $gambar_crop = $path."gallery-".$var;
-             cropImage(1169, 487, "$gambar", $ext, "$gambar_crop");
+             
           }
-          insert($conn,$gambar_crop_nama); //insert ke database      
+          insert($conn,$var); //insert ke database      
           alert_success("gallery Berhasil Ditambahkan"); //tampilin pesan data berhasil disimpan
         ?>
         <meta http-equiv="refresh" content="1;url=?mod=gallery" />

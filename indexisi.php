@@ -10,22 +10,27 @@ require_once 'slider.php';
 
   $profil = mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM profil"),MYSQLI_ASSOC);
   
-  $artikel = "SELECT * FROM artikel order by id desc";
+  $artikel = "SELECT * FROM artikel order by id desc limit 5";
   $r_artikel = $conn->query($artikel);
 
 ?>
+
+
+
+
+
         <section id="blog" class="container">        
             <div align="center">
             <ol class="breadcrumb">
                 <li><a href=""> <h1 style="color:black "><b>SEKILAS BERITA</b></h1></a></li>
             </ol>
-            </div>
+            </div>        
             <div class="blog">
                 <div class="row">
                     <div class="col-md-8">
                         <div class="blog-item">
                             <div class="row">
-
+                            
                             <?php
                             $noartikel = 1;
                             while ($d_artikel= mysqli_fetch_array($r_artikel,MYSQLI_ASSOC)) {
@@ -35,10 +40,15 @@ require_once 'slider.php';
                                         <?php
                                             if ($d_artikel['foto'] == "") {
                                                 ?>
-                                            <img class="img-responsive img-blog" src="images/no-image.png" width="100%" alt="<`" />
+                                                <div class="col-md-12">                                                    
+                                                    <img class=" img-blog" src="images/no-image.png" width="200" height="200" alt="artikel-desa" />
+                                                </div>
                                             <?php
                                             }else{?>
-                                            <img class="img-responsive img-blog" src="images/artikel/<?php echo $d_artikel['foto'];?>" width="100%" alt="<?php echo $d_artikel['judul'];?>" />
+
+                                                <div class="col-md-12">                                                    
+                                                    <img class="img-blog" src="images/artikel/<?php echo $d_artikel['foto'];?>" width="200" height="200" alt="<?php echo $d_artikel['judul'];?>" />
+                                                </div>
                                             <?php
                                             }
                                         ?>
@@ -47,7 +57,7 @@ require_once 'slider.php';
                                         <p align="justify"><?php echo $d_artikel['deskripsi_singkat'];?></p>
                                         <a class="btn btn-primary readmore" href="artikel.html?no_urut=<?php echo $d_artikel['id'];?>">Baca Selengkapnya <i class="fa fa-angle-right"></i></a>
                                 </div>                           
-                                <?php
+                             <?php
                                 $noartikel++;
                                 }
                             ?>

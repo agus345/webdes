@@ -26,9 +26,9 @@
                         <li>
                             <a href="?mod=sejarah"><i class="fa  fa-history"></i> Sejarah Desa</a>
                         </li>
-                        <li>
+                       <!-- <li>
                             <a href="?mod=sejarah_kades"><i class="fa  fa-history"></i> Sejarah Kepala Desa</a>
-                        </li>
+                        </li>-->
                         <li>
                             <a href="?mod=statistik"><i class="fa  fa-bar-chart"></i> Statistik desa</a>
                         </li>

@@ -39,7 +39,7 @@ require_once 'header.php';
                 <div class="portfolio-items"> -->
                     <div class="portfolio-item apps col-xs-12 col-sm-4 col-md-3">
                         <div class="recent-work-wrap">
-                            <img class="img-responsive" src="images/gallery/<?php echo $data['foto']; ?>" alt="foto">
+                            <img class="img-rounded" width="280" height="300" src="images/gallery/<?php echo $data['foto']; ?>" alt="foto">
                             <div class="overlay">
                                 <div class="recent-work-inner">
                                     <h3><a href="#"><?php echo $data['alt']?></a></h3>

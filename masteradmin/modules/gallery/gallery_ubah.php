@@ -14,12 +14,9 @@
               $path = "../images/gallery/";
               unlink($path.$row['foto']);             
               upload_file(user_image, $path); //upload berkas baru
-             $gambar = $path.$var;
-             $gambar_crop_nama = "gallery-".$var;
-             $gambar_crop = $path."gallery-".$var;
-              cropImage(1169, 487, "$gambar", 'jpg', "$gambar_crop");
+             
             }
-             ubah($conn,$gambar_crop_nama); //insert ke database
+             ubah($conn,$var); //insert ke database
               alert_success("Data gallery Berhasil diubah..."); //tampilin pesan data berhasil disimpan
               echo '<meta http-equiv="refresh" content="1;url=?mod=gallery" />';
         }

@@ -18,53 +18,6 @@
 
                         <?php
 
-// Upload versi tidak menggunakan function
-
-/*if (isset($_POST['tambah'])) {
-
-              $judul = $_POST['judul'];// user name
-
-              $imgFile = $_FILES['user_image']['name'];
-              $tmp_dir = $_FILES['user_image']['tmp_name'];
-              $imgSize = $_FILES['user_image']['size'];
-
-
-              $upload_dir = '../images/banner/'; // upload directory
-
-              $imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); // get image extension
-
-              // valid image extensions
-              $valid_extensions = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
-
-              // rename uploading image
-              $userpic = rand(1000,1000000).".".$imgExt;
-
-                  // allow valid image file formats
-                  if(in_array($imgExt, $valid_extensions)){
-                    // Check file size '5MB'
-                    if($imgSize < 5000000)        {
-                      move_uploaded_file($tmp_dir,$upload_dir.$userpic);
-                    }
-                    else{
-                      $errMSG = "File terlalu besar..";
-                    }
-                  }
-                else{
-                  $errMSG = "foto hanya berupa JPG, JPEG, PNG & GIF .";
-                }
-              insert($conn,$userpic); //insert ke database
-              alert_success("Data Banner Berhasil ditambahkan .."); //tampilin pesan data berhasil disimpan
-              echo '<meta http-equiv="refresh" content="1;url=?mod=banner" />';
-          }  */
-
-// end
-
-
-
-
-
-
-
           if (isset($_POST['tambah'])) {
              $var = $_FILES['user_image']['name'];
              $ext = pathinfo($var, PATHINFO_EXTENSION);             
@@ -73,11 +26,8 @@
         //      unlink("../img/".$row['gambar']); //hapus dulu gambar yang lama
               upload_file(user_image, $path); //upload berkas baru
               $gambar = $path.$var;
-              $gambar_crop_nama = "banner-".$var;
-              $gambar_crop = $path."banner-".$var;
-              cropImage(1169, 487, "$gambar", $ext, "$gambar_crop");
             }
-            insert($conn,$gambar_crop_nama); //insert ke database
+            insert($conn,$var); //insert ke database
             alert_success("Banner Berhasil Ditambahkan"); //tampilin pesan data berhasil disimpan
         ?>
         <meta http-equiv="refresh" content="1;url=?mod=banner" />

@@ -13,12 +13,9 @@
               $path = "../images/banner/";
               unlink($path.$row['foto']);  
               upload_file(user_image, $path); //upload berkas baru
-             $gambar = $path.$var;
-             $gambar_crop_nama = "banner-".$var;
-             $gambar_crop = $path."banner-".$var;
-              cropImage(1169, 487, "$gambar", 'jpg', "$gambar_crop");
+            
             }
-             ubah($conn,$gambar_crop_nama); //insert ke database
+             ubah($conn,$var); //insert ke database
               alert_success("Data Banner Berhasil diubah..."); //tampilin pesan data berhasil disimpan
               echo '<meta http-equiv="refresh" content="1;url=?mod=banner" />';
         }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 21 Jul 2017 pada 08.59
+-- Generation Time: 21 Jul 2017 pada 17.39
 -- Versi Server: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -66,11 +66,8 @@ CREATE TABLE `artikel` (
 --
 
 INSERT INTO `artikel` (`id`, `judul`, `deskripsi_singkat`, `isi`, `foto`, `kategori_artikel_id`, `aktif`) VALUES
-(2, 'Nasi Jamblang', 'Ini adalah nasi jamblang', 'Makanan Khas Cirebon', '20140528_092504.jpg', 1, '1'),
-(4, 'HEHE', 'bbbb', 'sdssdf', 'Toefel.jpg', 2, '1'),
-(5, 'fff', 'mkjhhhh', 'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh', 'smk.jpeg', 5, '1'),
-(6, 'ggg', 'hhh', 'hhhh', 'artikel-karawang.png', 2, '1'),
-(8, 'fasirkaliki', 'kkk', 'nn', 'artikel-1.jpg', 2, '1');
+(4, 'sdfgf', '', '', '1500649787.jpg', 2, '1'),
+(5, 'hhh', '', '', '1500649818.jpg', 1, '1');
 
 -- --------------------------------------------------------
 
@@ -90,9 +87,8 @@ CREATE TABLE `banner` (
 --
 
 INSERT INTO `banner` (`id`, `foto`, `alt`, `aktif`) VALUES
-(19, 'banner-2.jpg', 'gus', '1'),
-(21, 'banner-4.jpg', '4', '1'),
-(22, 'banner-7.jpg', '7', '1');
+(30, 'ya.jpeg', 'test ysa', '1'),
+(31, 'tes.jpg', 'hhh', '1');
 
 -- --------------------------------------------------------
 
@@ -116,7 +112,9 @@ INSERT INTO `gallery` (`id`, `alt`, `foto`, `aktif`) VALUES
 (2, '4', 'gallery-4.jpg', '1'),
 (3, '3', 'gallery-3.jpg', '1'),
 (5, '5', 'gallery-5.jpg', '1'),
-(6, 'customer', 'gallery-customer.jpg', '1');
+(6, 'customer', 'gallery-customer.jpg', '1'),
+(7, 'asd', 'test2 (2).jpg', '1'),
+(8, 'hh', 'test2 (1).png', '1');
 
 -- --------------------------------------------------------
 
@@ -392,17 +390,17 @@ ALTER TABLE `anggarandesa`
 -- AUTO_INCREMENT for table `artikel`
 --
 ALTER TABLE `artikel`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `banner`
 --
 ALTER TABLE `banner`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `hak_akses`
 --
